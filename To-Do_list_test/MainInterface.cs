@@ -11,5 +11,10 @@ namespace To_Do_list_test
         {
 
         }
+
+        private void textBoxNewTask_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
