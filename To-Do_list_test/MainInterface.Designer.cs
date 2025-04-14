@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new System.Windows.Forms.ListBox();
             textBoxNewTask = new System.Windows.Forms.TextBox();
             buttonAdd = new System.Windows.Forms.Button();
+            listView1 = new System.Windows.Forms.ListView();
+            taskName = new System.Windows.Forms.ColumnHeader();
+            taskTimeAdded = new System.Windows.Forms.ColumnHeader();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new System.Drawing.Point(12, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(631, 289);
-            listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // textBoxNewTask
             // 
             textBoxNewTask.Location = new System.Drawing.Point(12, 336);
             textBoxNewTask.Name = "textBoxNewTask";
             textBoxNewTask.Size = new System.Drawing.Size(311, 23);
-            textBoxNewTask.TabIndex = 1;
-            textBoxNewTask.TextChanged += textBoxNewTask_TextChanged;
+            textBoxNewTask.TabIndex = 4;
             // 
             // buttonAdd
             // 
@@ -61,24 +52,51 @@
             buttonAdd.UseVisualStyleBackColor = true;
             buttonAdd.Click += buttonAdd_Click;
             // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { taskName, taskTimeAdded });
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new System.Drawing.Point(12, 12);
+            listView1.Name = "listView1";
+            listView1.Size = new System.Drawing.Size(631, 318);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // taskName
+            // 
+            taskName.Name = "taskName";
+            taskName.Text = "Nom de la tache";
+            taskName.Width = 315;
+            // 
+            // taskTimeAdded
+            // 
+            taskTimeAdded.Name = "taskTimeAdded";
+            taskTimeAdded.Text = "Date d\'ajout";
+            taskTimeAdded.Width = 310;
+            // 
             // MainInterface
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(655, 450);
+            Controls.Add(listView1);
             Controls.Add(buttonAdd);
             Controls.Add(textBoxNewTask);
-            Controls.Add(listBox1);
             Text = "To-do List";
-            Load += MainInterface_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
+        private System.Windows.Forms.ColumnHeader taskTimeAdded;
+
+        private System.Windows.Forms.ColumnHeader taskName;
+
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private TextBox textBoxNewTask;
-        private Button buttonAdd;
+        private System.Windows.Forms.TextBox textBoxNewTask;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ListView listView1;
     }
 }
